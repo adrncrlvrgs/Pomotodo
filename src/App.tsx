@@ -3,7 +3,6 @@ import { View,Text, StyleSheet } from "react-native";
 
 const App = () =>{
     return(
-      
         <View>
             <Text style={styles.sectionTitle}>This is a task</Text>
         </View>
