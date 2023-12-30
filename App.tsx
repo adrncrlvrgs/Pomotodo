@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Main } from './src/index';
 export default function App() {
   return (
+    
     <View style={styles.container}>
       <Main/>
       <StatusBar style="auto" />
