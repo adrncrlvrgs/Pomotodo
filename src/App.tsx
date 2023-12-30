@@ -1,20 +1,39 @@
 import React from "react";
-import { View,Text, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
+import { useTheme, Text, Button } from "@rneui/themed";
+import { theme } from "../styles/ThemeStyles";
 
-const App = () =>{
+interface AppProps {
+  toggleTheme: () => void;
+}
+const App: React.FC<AppProps> = ({toggleTheme}) =>{
+  const { theme } = useTheme();
     return(
-        <View>
-            <Text style={styles.sectionTitle}>This is a task</Text>
+      <View style={[styles.container, { backgroundColor: theme.colors.background }]}>
+        <View style={[styles.tasksWrapper,]}>
+          <Text style={[styles.text]}>Welcome to the App!</Text>
+          <Button title="Dark Mode" onPress={toggleTheme}/>
         </View>
+    </View>
     )
 }
 
+
 const styles = StyleSheet.create({
-    sectionTitle: {
-      fontSize: 24,
-      fontWeight: "bold"
-    },
-  });
+  container: {
+    flex: 1,
+  },
+  tasksWrapper: {
+    paddingTop: 80,
+    paddingHorizontal: 20,
+  },
+  text: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 20,
+  },
+});
+
   
 
 export default App 

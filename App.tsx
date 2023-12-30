@@ -1,19 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React,{useState} from 'react';
+import { ThemeProvider } from '@rneui/themed';
 import { Main } from './src/index';
+import { theme } from './styles/ThemeStyles';
 export default function App() {
+  const [themeMode, setThemeMode] = useState('light');
+
+
+  const toggleTheme = () => {
+    setThemeMode(themeMode === 'light' ? 'dark' : 'light');
+  };
+
+  const currentThemeColors = themeMode === 'light' ? theme.lightColors : theme.darkColors;
+  const currentTheme = { ...theme, colors: currentThemeColors };
   return (
-    
-    <View style={styles.container}>
-      <Main/>
-      <StatusBar style="auto" />
-    </View>
+
+    <ThemeProvider theme={currentTheme}>
+      <Main toggleTheme={toggleTheme}/>
+    </ThemeProvider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#E8EAED',
-  },
-});
