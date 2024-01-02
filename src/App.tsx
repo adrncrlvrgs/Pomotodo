@@ -1,7 +1,7 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, KeyboardAvoidingView, Platform, TextInput, Touchable, TouchableOpacity } from "react-native";
 import { useTheme, Text, Button } from "@rneui/themed";
-import Task from "./components/Task";
+import {Task, AddTask }from "./components/index";
 
 type AppProps = {
   toggleTheme: () => void
@@ -12,11 +12,15 @@ const App = (props: AppProps) => {
     return(
       <View style={[styles.container, { backgroundColor: theme.colors.background }]}>
         <View style={[styles.tasksWrapper,]}>
-          <Text style={[styles.text]}>Today's Task</Text>
+          <View style={styles.header}>
+            <Text style={[styles.text]}>Today's Task</Text>
+            <Button title="Dark Mode" onPress={props.toggleTheme}/>
+          </View>
           <Task text={'Task 1'}/>
           <Task text={'Task 2'}/>
-          <Button title="Dark Mode" onPress={props.toggleTheme}/>
+          
         </View>
+        <AddTask/>
       </View>
     )
 }
@@ -35,6 +39,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 20,
   },
+  header: {
+    justifyContent: 'space-between',
+    flexDirection: "row",
+  }
+  
 });
 
   
