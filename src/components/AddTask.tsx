@@ -1,9 +1,26 @@
 import React,{useState } from "react";
 import { View, StyleSheet, KeyboardAvoidingView, Platform, TextInput, Touchable, TouchableOpacity, Keyboard } from "react-native";
 import { useTheme, Text, Button } from "@rneui/themed";
-
+import { subscribeToCollection } from "../../useData";
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "../../firebase-config";
 const AddTask = () => {
     const [task, setTask] = useState('')
+
+
+    const addTask = async () => {
+        try {
+          const docRef = await addDoc(collection(db, 'tasks'), {
+            title: 'New Task',
+            status: 'pending',
+            // other fields...
+          });
+          console.log('Task document written with ID: ', docRef.id);
+        } catch (e) {
+          console.error('Error adding task: ', e);
+        }
+      };
+      
     const handleAddTask = () => {
         Keyboard.dismiss();
         console.log(task)
