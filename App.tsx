@@ -7,7 +7,6 @@ import { useTheme, Text } from "@rneui/themed";
 
 export default function App() {
   const [themeMode, setThemeMode] = useState('light');
-  //const { theme } = useTheme();
 
   const toggleTheme = () => {
     setThemeMode(themeMode == 'light' ? 'dark' : 'light');

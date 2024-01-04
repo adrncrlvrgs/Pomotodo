@@ -1,5 +1,3 @@
-// src/theme/theme.js
-
 import { createTheme } from '@rneui/themed';
 
 const lightColors = {

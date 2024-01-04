@@ -10,8 +10,6 @@ type Props = {
 const Task = (props: Props) => {
   const { theme } = useTheme();
 
- 
-
   return (
     <View  style={[styles.item, { backgroundColor: theme.colors.secondary }]}>
       <View style={styles.itemLeft}>

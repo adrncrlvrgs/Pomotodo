@@ -18,13 +18,11 @@ const App = (props: AppProps) => {
           </View>
           <Task text={'Task 1'}/>
           <Task text={'Task 2'}/>
-          
         </View>
         <AddTask/>
       </View>
     )
 }
-
 
 const styles = StyleSheet.create({
   container: {

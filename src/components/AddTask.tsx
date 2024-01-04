@@ -7,7 +7,6 @@ import { db } from "../../firebase-config";
 const AddTask = () => {
     const [task, setTask] = useState('')
 
-
     const addTask = async () => {
         try {
           const docRef = await addDoc(collection(db, 'tasks'), {
