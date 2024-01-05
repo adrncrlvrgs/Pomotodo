@@ -1,7 +1,7 @@
 import React from "react";
-import { View, StyleSheet, KeyboardAvoidingView, Platform, TextInput, Touchable, TouchableOpacity } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { useTheme, Text, Button } from "@rneui/themed";
-import {Task, AddTask }from "./components/index";
+import {List, AddTask }from "./components/index";
 
 type AppProps = {
   toggleTheme: () => void
@@ -11,13 +11,12 @@ const App = (props: AppProps) => {
   const { theme } = useTheme();
     return(
       <View style={[styles.container, { backgroundColor: theme.colors.background }]}>
-        <View style={[styles.tasksWrapper,]}>
+        <View style={[styles.tasksWrapper]}>
           <View style={styles.header}>
             <Text style={[styles.text]}>Today's Task</Text>
             <Button title="Dark Mode" onPress={props.toggleTheme}/>
           </View>
-          <Task text={'Task 1'}/>
-          <Task text={'Task 2'}/>
+          <List/>
         </View>
         <AddTask/>
       </View>

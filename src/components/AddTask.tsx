@@ -1,30 +1,25 @@
 import React,{useState } from "react";
 import { View, StyleSheet, KeyboardAvoidingView, Platform, TextInput, Touchable, TouchableOpacity, Keyboard } from "react-native";
 import { useTheme, Text, Button } from "@rneui/themed";
-import { subscribeToCollection } from "../../useData";
+
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../../firebase-config";
 const AddTask = () => {
     const [task, setTask] = useState('')
 
-    const addTask = async () => {
+    const addTask = async ( ) => {
         try {
-          const docRef = await addDoc(collection(db, 'tasks'), {
-            title: 'New Task',
-            status: 'pending',
-            // other fields...
-          });
-          console.log('Task document written with ID: ', docRef.id);
+            console.log(task)
+            const docRef = await addDoc(collection(db, 'data','task','tbl_task'), {
+                task: task
+            });
+            Keyboard.dismiss();
+            setTask('')
+            console.log('Task document written with ID: ', docRef.id);
         } catch (e) {
-          console.error('Error adding task: ', e);
+            console.error('Error adding task: ', e);
         }
       };
-      
-    const handleAddTask = () => {
-        Keyboard.dismiss();
-        console.log(task)
-        setTask('')
-    }
     
     return(
         <KeyboardAvoidingView
@@ -33,7 +28,7 @@ const AddTask = () => {
         >
             <TextInput style={styles.input} placeholder="Write task" value={task} onChangeText={e => setTask(e)}></TextInput>
 
-            <TouchableOpacity onPress={() => handleAddTask()}>
+            <TouchableOpacity onPress={() => addTask()}>
                 <View style={styles.addWrapper}>
                     <Text>+</Text>
                 </View>

@@ -5,13 +5,14 @@ import { useTheme, Text } from "@rneui/themed";
 
 type Props = {
   text: string;
+  key: any
 };
 
 const Task = (props: Props) => {
   const { theme } = useTheme();
 
   return (
-    <View  style={[styles.item, { backgroundColor: theme.colors.secondary }]}>
+    <View key={props.key} style={[styles.item, { backgroundColor: theme.colors.secondary }]}>
       <View style={styles.itemLeft}>
         <View style={styles.square}></View>
         <Text style={[styles.itemText]}>{props.text}</Text>
