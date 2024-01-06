@@ -9,13 +9,12 @@ const AddTask = () => {
 
     const addTask = async ( ) => {
         try {
-            console.log(task)
-            const docRef = await addDoc(collection(db, 'data','task','tbl_task'), {
+            setTask('')
+            await addDoc(collection(db, 'data','task','tbl_task'), {
                 task: task
             });
             Keyboard.dismiss();
-            setTask('')
-            console.log('Task document written with ID: ', docRef.id);
+
         } catch (e) {
             console.error('Error adding task: ', e);
         }

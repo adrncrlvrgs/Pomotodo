@@ -6,7 +6,6 @@ import { subscribeToNestedCollection } from "../../dataContext";
 interface TaskItem {
     id: string;
     task: string;
-    // ... other properties
 }
 
 const List = () => {
@@ -24,8 +23,8 @@ const List = () => {
 
     return (
         <View>
-            {tasks.map((item) => (
-                <Task key={item.id} text={item.task} />
+            {tasks.map((item,index) => (
+                <Task index={item.id} key={item.id} text={item.task} />
             ))}
         </View>
     );

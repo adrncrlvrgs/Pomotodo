@@ -1,23 +1,24 @@
 import React from "react";
 import { View, TouchableOpacity, StyleSheet } from "react-native";
 import { useTheme, Text } from "@rneui/themed";
+import DeleteTask from "./DeleteTask";
 
 
 type Props = {
   text: string;
-  key: any
+  index: string;
 };
 
 const Task = (props: Props) => {
   const { theme } = useTheme();
 
   return (
-    <View key={props.key} style={[styles.item, { backgroundColor: theme.colors.secondary }]}>
+    <View style={[styles.item, { backgroundColor: theme.colors.secondary }]}>
       <View style={styles.itemLeft}>
         <View style={styles.square}></View>
         <Text style={[styles.itemText]}>{props.text}</Text>
       </View>
-      <View style={styles.circular}></View>
+      <DeleteTask props={props.index.toString()} style={styles.circular} />
     </View>
   );
 };
@@ -52,11 +53,11 @@ const styles = StyleSheet.create({
       maxWidth: '80%'
    },
   circular: {
-      width: 12,
-      height: 12,
+      width: 15,
+      height: 15,
       borderColor: "#55bcf6",
       borderWidth: 2,
-      borderRadius: 5
+      borderRadius: 10
   }
 });
 

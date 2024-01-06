@@ -17,7 +17,6 @@ export const subscribeToNestedCollection = (onDataChanged) => {
     const unsubscribe = onSnapshot(collectionRef, (snapshot) => {
       const newData = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
       onDataChanged(newData); // Call the callback function with the new data
-      console.log(newData);
     }, (error) => {
       // Handle errors here, such as logging them
       console.error("Error fetching collection data:", error);
