@@ -1,10 +1,11 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
 import { useTheme, Text, Button } from "@rneui/themed";
-import {List, AddTask }from "./components/index";
+import {List, AddTask,DarkMode }from "./components/index";
 
 type AppProps = {
-  toggleTheme: () => void
+  toggleTheme: () => void,
+  lampColor: any
 }
 
 const App = (props: AppProps) => {
@@ -14,7 +15,7 @@ const App = (props: AppProps) => {
         <View style={[styles.tasksWrapper]}>
           <View style={styles.header}>
             <Text style={[styles.text]}>Today's Task</Text>
-            <Button title="Dark Mode" onPress={props.toggleTheme}/>
+            <DarkMode onPress={props.toggleTheme} color={props.lampColor}/>
           </View>
           <List/>
         </View>

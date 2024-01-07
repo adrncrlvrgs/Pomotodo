@@ -9,8 +9,8 @@ const lightColors = {
 
 const darkColors = {
   primary: '#0d1314',
-  secondary: '#314447',
-  background: '#0d1314',      
+  secondary: '#b58890',
+  background: '#ffb6c5',      
   mode: 'dark'
 };
 

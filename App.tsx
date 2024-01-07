@@ -7,7 +7,7 @@ import { useTheme, Text } from "@rneui/themed";
 
 export default function App() {
   const [themeMode, setThemeMode] = useState('light');
-
+  //console.log(themeMode)
   const toggleTheme = () => {
     setThemeMode(themeMode == 'light' ? 'dark' : 'light');
   };
@@ -17,7 +17,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={currentTheme}>
-      <Main toggleTheme={toggleTheme}/>
+      <Main toggleTheme={toggleTheme} lampColor={themeMode}/>
     </ThemeProvider>
   );
 }
