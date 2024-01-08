@@ -1,7 +1,7 @@
 import React from "react";
 import { TouchableOpacity,View } from "react-native";
 import { Text } from "@rneui/base";
-import { db } from "../../firebase-config";
+import { db } from "../../../firebase-config";
 import { doc, deleteDoc } from "firebase/firestore";
 
 const DeleteTask = ({props,style}:{props : string , style : any}) =>{

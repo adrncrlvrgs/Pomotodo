@@ -1,7 +1,7 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
 import { useTheme, Text, Button } from "@rneui/themed";
-import {List, AddTask,DarkMode }from "./components/index";
+import {List, AddTask,DarkMode }from "./components/Task/index";
 
 type AppProps = {
   toggleTheme: () => void,

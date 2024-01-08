@@ -3,7 +3,7 @@ import { View, StyleSheet, KeyboardAvoidingView, Platform, TextInput, Touchable,
 import { useTheme, Text, Button } from "@rneui/themed";
 
 import { addDoc, collection } from "firebase/firestore";
-import { db } from "../../firebase-config";
+import { db } from "../../../firebase-config";
 const AddTask = () => {
     const [task, setTask] = useState('')
 
