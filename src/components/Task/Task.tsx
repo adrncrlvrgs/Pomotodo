@@ -1,8 +1,7 @@
 import React from "react";
-import { View, TouchableOpacity, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { useTheme, Text } from "@rneui/themed";
 import DeleteTask from "./DeleteTask";
-
 
 type Props = {
   text: string;

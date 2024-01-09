@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { View } from "react-native";
 import Task from "./Task";
 import { subscribeToNestedCollection } from "../../../dataContext";
-
 interface TaskItem {
     id: string;
     task: string;

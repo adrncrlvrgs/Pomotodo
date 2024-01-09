@@ -18,7 +18,7 @@ const AddTask = () => {
         } catch (e) {
             console.error('Error adding task: ', e);
         }
-      };
+    };
     
     return(
         <KeyboardAvoidingView
@@ -26,7 +26,6 @@ const AddTask = () => {
             style={styles.writeTaskWrapper}
         >
             <TextInput style={styles.input} placeholder="Write task" value={task} onChangeText={e => setTask(e)}></TextInput>
-
             <TouchableOpacity onPress={() => addTask()}>
                 <View style={styles.addWrapper}>
                     <Text>+</Text>

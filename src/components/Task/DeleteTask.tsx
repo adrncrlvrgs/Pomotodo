@@ -1,6 +1,5 @@
 import React from "react";
 import { TouchableOpacity,View } from "react-native";
-import { Text } from "@rneui/base";
 import { db } from "../../../firebase-config";
 import { doc, deleteDoc } from "firebase/firestore";
 

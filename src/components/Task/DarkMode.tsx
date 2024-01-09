@@ -3,8 +3,6 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { View } from "react-native";
 
 const DarkMode = ( {onPress, color}:{onPress: any,color: any}) => {
-   // console.log("theme",color)
-
     const clr = color === "light" ? "#ffb6c5": "#EFF2F4"
     return(
         <View>
@@ -14,4 +12,3 @@ const DarkMode = ( {onPress, color}:{onPress: any,color: any}) => {
 }
 
 export default DarkMode
-// icon
