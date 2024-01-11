@@ -11,7 +11,7 @@ const AddTask = () => {
         try {
             setTask('')
             await addDoc(collection(db, 'data','task','tbl_task'), {
-                task: task
+                task: task,
             });
             Keyboard.dismiss();
 

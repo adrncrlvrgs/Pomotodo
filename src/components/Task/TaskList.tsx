@@ -11,12 +11,9 @@ const List = () => {
     const [tasks, setTasks] = useState<TaskItem[]>([]);
 
     useEffect(() => {
-        // Set up the subscription
         const unsubscribe = subscribeToNestedCollection((newData: TaskItem[]) => {
-            setTasks(newData); // Update the component state with the new data
+            setTasks(newData); 
         });
-
-        // Unsubscribe when the component unmounts
         return () => unsubscribe();
     }, []);
 
