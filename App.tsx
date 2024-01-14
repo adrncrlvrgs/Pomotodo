@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { ThemeProvider } from '@rneui/themed';
 import { Main } from './src/index';
 import { theme } from './styles/ThemeStyles';
-import { useTheme, Text } from "@rneui/themed";
+import Nav from './src/Stack/Stack';
+
 
 
 export default function App() {
   const [themeMode, setThemeMode] = useState('light');
-  //console.log(themeMode)
   const toggleTheme = () => {
     setThemeMode(themeMode == 'light' ? 'dark' : 'light');
   };
@@ -17,7 +17,8 @@ export default function App() {
 
   return (
     <ThemeProvider theme={currentTheme}>
-      <Main toggleTheme={toggleTheme} lampColor={themeMode}/>
+      <Nav toggleTheme={toggleTheme} themeMode={themeMode}/>
+      {/* <Main toggleTheme={toggleTheme} lampColor={themeMode}/> */}
     </ThemeProvider>
   );
 }
