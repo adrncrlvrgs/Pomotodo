@@ -10,7 +10,7 @@ const Nav = ({ toggleTheme, themeMode}:{toggleTheme :any, themeMode: any}) => {
       <Stack.Navigator>
         <Stack.Screen 
           name="Home" 
-          children={() => <Home toggleTheme={toggleTheme} lampColor={themeMode} />}
+          component={() => <Home toggleTheme={toggleTheme} lampColor={themeMode} />}
           options={{ headerShown: false }} 
         />
       </Stack.Navigator>
