@@ -4,8 +4,6 @@ import { Main } from './src/index';
 import { theme } from './styles/ThemeStyles';
 import Nav from './src/Stack/Stack';
 
-
-
 export default function App() {
   const [themeMode, setThemeMode] = useState('light');
   const toggleTheme = () => {
@@ -18,7 +16,6 @@ export default function App() {
   return (
     <ThemeProvider theme={currentTheme}>
       <Nav toggleTheme={toggleTheme} themeMode={themeMode}/>
-      {/* <Main toggleTheme={toggleTheme} lampColor={themeMode}/> */}
     </ThemeProvider>
   );
 }
