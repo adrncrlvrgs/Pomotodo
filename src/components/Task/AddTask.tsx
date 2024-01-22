@@ -13,6 +13,7 @@ const AddTask = () => {
             await addDoc(collection(db, 'data','task','tbl_task'), {
                 task: task,
             });
+            console.log('added')
             Keyboard.dismiss();
 
         } catch (e) {
